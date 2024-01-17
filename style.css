@@ -1,0 +1,284 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;700;800;900&display=swap');
+
+
+:root {
+    --v1: #684731ff;
+    --v2: #955A3Aff;
+    --v3: #98765Dff;
+    --v4: #EAE5D7ff;
+    --v5: #FDFDFDff;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    
+   
+}
+
+body{
+    font-family: 'Outfit',sans-serif;
+    color: #000;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color:#beb19e;
+}
+header{
+    width: 100vw;
+    height: 100vh;
+}
+
+ul{
+    list-style: none;
+}
+
+.bg{
+    position: absolute;
+    left: 0%;
+    width: 0%;
+    height: 100%;
+   
+    z-index: -1;
+}
+/* NAVBAR
+=========================== */
+
+.navbar{
+    background-color:rgba(234, 229, 215, 0.4);
+}
+.navbar-brand{
+    color: var(--v1);
+    font-weight: 700;
+}
+
+.navbar-brand:hover{
+    color: var(--v3);
+}
+.nav-link{
+    color: var(--v1);
+    font-weight: 700;
+}
+.nav-link:hover{
+    color: var(--v3);
+}
+.fa-solid{
+    color: var(--v1);
+    font-size: 1.5rem;
+}
+/* IMAGE
+=========================== */
+
+
+.img-wrapper .img{
+    background: url('./img/hero.jpg') no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    height: 100vh;
+    width: 570px;
+    z-index: 1;
+    opacity: 0;
+    animation: image-appear 0.0001s linear forwards;
+    animation-delay: 2.4s;
+}
+
+
+@keyframes image-appear{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+/* BLOCKS
+=========================== */
+.block{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: var(--v1);
+    animation: block-appear 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 1.5s;
+}
+
+.img-wrapper .block{
+    animation-delay: 1.8s;
+}
+
+@keyframes block-appear{
+    0%{
+       left: 0;
+       width: 0%;
+    }
+    50%{
+        left: 0;
+        width: 100%;
+    }
+    100%{
+        left: 100%;
+        width: 0%;
+    }
+}
+/* TEXT
+=========================== */
+#ttxt{
+    padding: 1rem;
+    position:relative;
+    top: 15rem;
+    left: 10rem;
+    width: 40%;
+    background-color:rgba(234, 229, 215, 0.5);
+}
+#ttxt h1{
+    color: var(--v1);
+    font-size: clamp(1.5rem, 4vw, 6rem);
+    font-weight: 600;
+}
+#ttxt p{
+    color: var(--v2);
+    font-size: clamp(1rem, 2vw, 4rem);
+    font-weight: 500;
+    
+}
+@media (max-width: 768px) {
+    .img-wrapper .img{
+        width: 100vw;
+    }
+    #ttxt{
+        width: 80%;
+        
+        left: 10%;
+    }
+}
+
+/* ABOUT-SECTION
+=========================== */
+
+#about{
+    color: var(--v1);
+    background-color: var(--v5);
+    padding: 2rem;
+}
+#about h1{
+    font-size: clamp(1.4rem, 3vw, 3rem);
+    font-weight: 600;
+}
+#about p{
+    font-size: clamp(0.8rem, 2vw, 2rem);
+    font-weight: 500;
+    
+}
+.about-head{
+    color: var(--v1);
+    font-weight: 600;
+}
+#about button{
+    background-color: var(--v2);
+    color: var(--v4);
+}
+
+
+/* Team
+=========================== */
+
+#team{
+    color: var(--v1);
+}
+#team h1{
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+#team p{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--v4);
+}
+#team .card-body{
+    background-color: var(--v1);
+}
+#team h5{
+    color: var(--v4);
+}
+
+#team a{
+    background-color: var(--v2);
+    color: var(--v4);
+}
+.card-body img{
+    width: 200px;
+ }
+ 
+
+/* Gallery
+=========================== */
+
+#gallery{
+    background-color: var(--v5);
+    padding: 2rem ;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+  
+  /* Create four equal columns that sits next to each other */
+  .column {
+    flex: 25%;
+    max-width: 33.3%;
+    padding: 0 4px;
+  }
+  
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+    filter: grayscale(1) brightness(0.5);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s linear;
+  }
+  .column img:hover {
+    filter: grayscale(0);
+  }
+  @media screen and (max-width: 800px) {
+    .column {
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+      flex: 100%;
+      max-width: 100%;
+    }
+    .column img {
+      filter: grayscale(0) brightness(1);
+    }
+  }
+/* Contact
+=========================== */
+#contact{
+    color: var(--v1);
+    font-weight: 500;
+}
+#contact h1{
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+#contact p{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--v4);
+}
+#contact button{
+    background-color: var(--v2);
+    color: var(--v4);
+}
+  
